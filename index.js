@@ -26,43 +26,14 @@
 // const text = document.createTextNode("New sentence to test");
 // root.appendChild(text);
 
-const h1 = document.createElement("h1");
-h1.textContent = "This is an imperative way to program";
-h1.className = "header";
-document.getElementById("root").append(h1);
+// const h1 = document.createElement("h1");
+// h1.textContent = "This is an imperative way to program";
+// h1.className = "header";
+// document.getElementById("root").append(h1);
 
 //vs 
 
-const element = <h1 className="header">This is JSX</h1>
-console.log(element)
-ReactDOM.render(element, document.getElementById("root"))
 
-//example
-const page = (
-    <div>
-        <h1 className="header">This is JSX</h1>
-        <p>This is a paragraph</p>
-    </div>
-)
-
-
-//making a navbar in React 
-const navbar = (
-    <nav className="nav">
-        <h1 className="website">This is the website</h1>
-        <ul className="nav-items">
-            <li>Pricing</li>
-            <li>About</li>
-            
-            <li>Contact</li>
-        </ul>
-    </nav>
-)
-
-ReactDOM.render(
-    navbar,
-    document.getElementById("root")
-)
 
 //JSX returns javascript objects. Render turns these objects into DOM elements
 
@@ -90,3 +61,70 @@ ReactDOM.render(
 // 5. What does it mean for something to be "composable"?
 // We have small pieces that we can put together to make something
 // larger/greater than the individual pieces.
+
+function Header() {
+    return (
+        <header>
+            <nav className="nav">
+                <img src="./react-logo.png" className="nav-logo" />
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
+// ReactDOM.render(element, document.getElementById("root"))
+
+
+
+function Header() {
+    return (
+        <header>
+            <nav className="nav">
+                <img src="./react-logo.png" className="nav-logo" />
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
+
+function Footer() {
+    return (
+        <footer>
+            <small>© 2021 Ziroll development. All rights reserved.</small>
+        </footer>
+    )
+}
+
+function MainContent() {
+    return (
+        <div>
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+        </div>
+    )
+}
+
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
