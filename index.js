@@ -48,9 +48,9 @@ const page = (
 
 //making a navbar in React 
 const navbar = (
-    <nav>
+    <nav className="nav">
         <h1 className="website">This is the website</h1>
-        <ul>
+        <ul className="nav-items">
             <li>Pricing</li>
             <li>About</li>
             
